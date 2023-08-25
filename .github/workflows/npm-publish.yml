@@ -36,5 +36,5 @@ jobs:
       - run: npm install
       - run: npm publish
         env:
-          # 通过NPM_TOKEN，Github Action才可以直接发布
+          #通过NPM_TOKEN，Github Action才可以直接发布
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
