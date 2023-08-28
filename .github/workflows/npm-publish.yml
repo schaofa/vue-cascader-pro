@@ -11,16 +11,25 @@ on:
     #监听main分支的push操作，只要main分支发生push操作，就会运行发布代码
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: https://registry.npmjs.org/
-      - run: yarn
-      - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET_KEY }}
+    publish:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout source code
+          uses: actions/checkout@v2
+  
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: 16
+  
+        - name: Install dependencies
+          run: npm install
+  
+        - name: Build package
+          run: npm run build
+  
+        - name: Publish to npm
+          run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET_KEY }}
