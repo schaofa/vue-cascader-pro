@@ -20,11 +20,10 @@ jobs:
         with: 
           # node版本
           node-version: 16
-  
+          registry-url: https://registry.npmjs.org/
+          
         # 发布npm包
       - name: Publish to npm
-        run: |
-           echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
-           npm publish
+        run: npm publish
         env:
          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
