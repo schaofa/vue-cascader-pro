@@ -28,5 +28,6 @@ jobs:
         env:
          # npm 账号下 Access Tokens -> Generate New Token -> Granular Access Token 复制到github仓库下Settings -> Secrets and variables -> Action -> New repository secret
          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN_KEY}}
+         
          # 生成位置 github账号下 Settings/Developer Settings -> Personal access tokens(Fine-graubed tokens beta)
          GITHUB_TOKEN: ${{secrets.secure_key_smith}}
