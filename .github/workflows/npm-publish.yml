@@ -24,7 +24,7 @@ jobs:
         # 发布npm包
       - name: Publish to npm
         run: |
-           npm config set //registry.npmjs.org/:_authToken=$npm_tokenKey
+           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKENKEY
            npm publish
         env:
-         NODE_AUTH_TOKEN: ${{secrets.npm_tokenKey}}
+         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKENKEY}}
