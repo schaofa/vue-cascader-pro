@@ -10,21 +10,21 @@ on:
 
 jobs:
   publish-npm:
-  runs-on: ubuntu-latest
-  steps:
-    - name: 检查分支
-      uses: actions/checkout@main
-
-    - name: 设置node
-      uses: actions/setup-node@main
-      with: 
-        # node版本
-        node-version: 16
-
-      # 发布npm包
-    - name: Publish to npm
-      run: |
-         npm config set //registry.npmjs.org/:_authToken=$npm_tokenKey
-         npm publish
-      env:
-       NODE_AUTH_TOKEN: ${{secrets.npm_tokenKey}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检查分支
+        uses: actions/checkout@main
+  
+      - name: 设置node
+        uses: actions/setup-node@main
+        with: 
+          # node版本
+          node-version: 16
+  
+        # 发布npm包
+      - name: Publish to npm
+        run: |
+           npm config set //registry.npmjs.org/:_authToken=$npm_tokenKey
+           npm publish
+        env:
+         NODE_AUTH_TOKEN: ${{secrets.npm_tokenKey}}
