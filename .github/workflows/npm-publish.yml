@@ -26,5 +26,5 @@ jobs:
       - name: Publish to npm
         run: npm publish --access public
         env:
-         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN_KEY}}
          GITHUB_TOKEN: ${{secrets.secure_key_smith}}
