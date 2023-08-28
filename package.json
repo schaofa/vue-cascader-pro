@@ -1,6 +1,6 @@
 {
   "name": "vue-cascader-pro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "elementui级联选择器cascader支持数据量大的显示",
   "main": "index.js",
   "repository": "git@github.com:schaofa/vue-cascader-pro.git",
